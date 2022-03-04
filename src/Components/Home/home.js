@@ -1,6 +1,7 @@
 import './styles.css'
 import {Link} from 'react-router-dom';
 import {useState} from 'react';
+import {NewsLetter} from './newsletter'
 
 let home_data=[
 {
@@ -109,57 +110,3 @@ function Location(){
 	);
 }
 
-function NewsLetter(){
-	const [phone,setPhone]=useState("");
-	const [message,setMessage]=useState("Suscribe");
-	function suscribe(event){
-		console.log(phone);
-		if(phone.length!=10)
-			alert("please enter a valid phone number");
-		else{
-			document.getElementById("my-btn").disabled = true;
-			alert("An otp has been sent to your number : "+phone);
-			var otp=prompt("Enter your otp : ");
-			console.log(otp);
-			setMessage("Processing");
-			try{
-				verifyOtp(otp).then((res)=>{
-					if(res==="true")setMessage("Suscribed..");
-					else{
-						setMessage("Suscribe");
-						alert("Failed to verify otp...try again")
-						document.getElementById("my-btn").disabled = false;
-						
-					}
-				});
-				
-			}catch(err){
-				console.log(err);
-			}
-			
-		}
-	}
-	function verifyOtp(otp){
-		return new Promise((resolve,reject)=>{
-			setTimeout(()=>{resolve("false");},2000);
-		});
-		
-	}
-	const changeHandler=(event)=>{
-		let p=event.target.value;
-		setPhone(p);
-
-	}
-
-	return(
-		<div id='newsletter-box'>
-			<div id='newsletter-head'>Suscribe to our NewsLetter</div>
-			<div id='newsletter-phone'>
-				Enter your phone number: <input type="number" length="10" onChange={(event)=>{changeHandler(event)}}/>
-			</div>
-			<div id='newsletter-button'>
-				<button id="my-btn" className="btn btn-primary" onClick={(event)=>{suscribe(event)}}>{message}</button>
-			</div>
-		</div>
-	);
-}
