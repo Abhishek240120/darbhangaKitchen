@@ -1,8 +1,7 @@
 import "./styles.css";
 
 export default function Carousel() {
-  const src1 =
-    "https://media.gettyimages.com/photos/authentic-indian-food-picture-id639389404?s=2048x2048";
+  const src1 = "";
   const src2 =
     "https://content.jdmagicbox.com/comp/darbhanga/a5/9999p6272.6272.140121072043.j4a5/catalogue/baba-steel-house-darbhanga-1tolt93nyu.jpg?clr=";
   const src3 =
@@ -15,13 +14,21 @@ export default function Carousel() {
     >
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src={src1} class="d-block w-100" alt="first" />
+          <img src="./kalash_pics/rest.jpg" class="d-block w-100" alt="first" />
         </div>
         <div class="carousel-item">
-          <img src={src2} class="d-block w-100" alt="second" />
+          <img
+            src="./kalash_pics/restaurant_pic1.jpg"
+            class="d-block w-100"
+            alt="second"
+          />
         </div>
         <div class="carousel-item">
-          <img src={src3} class="d-block w-100" alt="third" />
+          <img
+            src="./kalash_pics/restaurant_pic2.jpg"
+            class="d-block w-100"
+            alt="third"
+          />
         </div>
       </div>
       <button

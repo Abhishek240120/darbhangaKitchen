@@ -1,7 +1,7 @@
 .footer-class {
   display: grid;
   padding: 3px;
-  background-color: DarkSalmon;
+  background-color: rgb(17, 13, 12);
   color: white;
   grid-template-columns: auto auto auto;
 }
@@ -13,7 +13,7 @@
   display: grid;
   justify-content: center;
 }
-#footer-right{
-  display:grid;
+#footer-right {
+  display: grid;
   justify-content: center;
 }

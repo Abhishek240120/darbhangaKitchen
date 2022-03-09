@@ -1,9 +1,9 @@
 .header {
-  
-font-family: "Festive", cursive;
+  font-family: "Festive", cursive;
   display: grid;
-  grid-template-columns: 20%  60% 20%;
+  grid-template-columns: 20% 60% 20%;
   grid-row-gap: 30px;
+  background-color: black;
 }
 
 img {
@@ -15,15 +15,15 @@ img {
   justify-content: end;
 }
 .header-title {
-  font-family: "Festive", cursive;
+  font-family: "Festive", Monaco;
   display: grid;
   align-content: center;
-  color: red;
-  justify-content:start;
+  color: rgb(161, 15, 15);
+  justify-content: start;
   font-size: 4em;
 }
-.header-trackOrder{
-  font-family:none ;
+.header-trackOrder {
+  font-family: none;
   display: grid;
   justify-content: start;
   align-content: center;
