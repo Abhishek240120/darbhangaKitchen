@@ -15,10 +15,13 @@ import SouthIndian from "./Components/SouthIndian/SouthIndian.js";
 import OrderSummary from "./Components/OrderSummary/OrderSummary.js";
 import TrackOrder from "./Components/TrackOrder/TrackOrder.js";
 
+import "./styles.css"
+
 const rootElement = document.getElementById("root");
 ReactDOM.render(
   <StrictMode>
     <Header />
+    
     <Carousel />
 
     <Router>

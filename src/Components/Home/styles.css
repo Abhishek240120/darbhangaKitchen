@@ -19,12 +19,13 @@
   display: grid;
   justify-content: center;
   margin-top: 30px;
-  background-color: rgb(19, 15, 15);
+  background-color: rgb(83, 147, 212);
+
 }
 #message {
   padding: 10px;
   font-style: italic;
-  color: rgb(187, 32, 32);
+  color:rgb(237, 245, 244);
   font-weight: bold;
 }
 iframe {
@@ -55,4 +56,8 @@ iframe {
 #newsletter-button {
   display: grid;
   justify-content: center;
+}
+.home-about-restra{
+  justify-content: center;
+  display: grid;
 }

@@ -14,7 +14,7 @@ export default function Footer() {
       </div>
       <div id="footer-right">*All rights reserved</div>
       <div id="footer-developer">
-        Developed By Abhishek, Nayan, Kalash, Ritwika
+        Developed By NakaAb
       </div>
     </div>
   );

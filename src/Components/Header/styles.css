@@ -13,6 +13,8 @@ img {
 .header-logo {
   display: grid;
   justify-content: end;
+  padding-top: 5px;
+  padding: 5px;
 }
 .header-title {
   font-family: "Festive", Monaco;
@@ -21,6 +23,13 @@ img {
   color: rgb(161, 15, 15);
   justify-content: start;
   font-size: 4em;
+}
+.header-title>a{
+  color:white;
+  padding: 10px;
+}
+.header-title>div{
+  font-size: 0.8em;
 }
 .header-trackOrder {
   font-family: none;

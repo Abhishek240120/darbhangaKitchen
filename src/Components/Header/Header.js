@@ -12,7 +12,7 @@ export default function Header() {
         />
       </div>
       <div className="header-title">
-        <a href="/home">Darbhanga Kitchen</a>
+        <a href="/home">darbhanga Kitchen</a>
         <div> - Paradise on your plate</div>
       </div>
 

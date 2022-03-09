@@ -5,26 +5,49 @@ export function NewsLetter(){
 	const [mail,setMail]=useState("");
 	const [message,setMessage]=useState("Suscribe");
 	function suscribe(event){
+
 		console.log(mail);
 		if(verifyMail(mail)==false)
 			alert("please enter a valid mail address");
 		else{
+
+			const requestOptions = {
+		        method: 'POST',
+		        headers: { 'Content-Type': 'application/json' },
+		        body: JSON.stringify({ mail:mail })
+		    };
+		    fetch('http://localhost:8000/enterUser', requestOptions)
+		        .then(response => response.json())
+		        .then(data => console.log(data));
+
 			document.getElementById("my-btn").disabled = true;
 			alert("An otp has been sent to your Email : "+mail);
 			var otp=prompt("Enter your otp : ");
 			console.log(otp);
 			setMessage("Processing");
 			try{
-				verifyOtp(otp).then((res)=>{
-					if(res==="true")setMessage("Suscribed..");
+				const requestOptions = {
+			        method: 'POST',
+			        headers: { 'Content-Type': 'application/json' },
+			        body: JSON.stringify({ mail:mail,otp:otp})
+			    };
+			    
+			    fetch('http://localhost:8000/verifyUser', requestOptions)
+			    .then(response => response.json())
+			    .then(res =>{
+			    	console.log("verifying user");
+			       	console.log(res);
+					if(res.verified==="true"){
+						alert("You have subscribed to our NewsLetter");
+						setMessage("Suscribed..");
+					}
 					else{
 						setMessage("Suscribe");
-						alert("Failed to verify otp...try again")
+						alert("Failed to verify otp...try again sorry")
 						document.getElementById("my-btn").disabled = false;
-						
 					}
 				});
-				
+					
 			}catch(err){
 				console.log(err);
 			}
@@ -33,7 +56,18 @@ export function NewsLetter(){
 	}
 	function verifyOtp(otp){
 		return new Promise((resolve,reject)=>{
-			setTimeout(()=>{resolve("false");},2000);
+
+			const requestOptions = {
+		        method: 'POST',
+		        headers: { 'Content-Type': 'application/json' },
+		        body: JSON.stringify({ mail:mail,otp:otp})
+		    };
+		    fetch('http://localhost:8000/verifyUser', requestOptions)
+		        .then(response => response.json())
+		        .then(data => {
+		        	console.log(data);
+		        	resolve("true")
+		        });
 		});
 		
 	}
